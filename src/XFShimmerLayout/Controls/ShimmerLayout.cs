@@ -156,6 +156,19 @@ namespace XFShimmerLayout.Controls
         {
             view.SetValue(PaddingOverlayProperty, value);
         }
+
+        public static BindableProperty DisableProperty = BindableProperty.CreateAttached(
+            "Disable", typeof(bool), typeof(ShimmerLayout), default(bool));
+
+        public static bool GetDisable(BindableObject view)
+        {
+            return (bool)view.GetValue(DisableProperty);
+        }
+
+        public static void SetDisable(BindableObject view, bool value)
+        {
+            view.SetValue(DisableProperty, value);
+        }
         #endregion
 
         private static double _density;
@@ -406,6 +419,10 @@ namespace XFShimmerLayout.Controls
                 /* Draw every VisualElement in our layout tree to the SKCanvas */
                 foreach (var skElement in _childVisualElements)
                 {
+                    //Not draw if element is Disabled
+                    var disable = GetDisable(skElement.OriginalView);
+                    if (disable)
+                        continue;
                     //Set cornerRadius and padding for every view
                     var corner = GetCornerRadiusOverlay(skElement.OriginalView);
                     var padding = GetPaddingOverlay(skElement.OriginalView);
@@ -418,9 +435,9 @@ namespace XFShimmerLayout.Controls
                         padding = PaddingOverlayDefault;
 
                     //If default and specific not set, use box or frame cornerRadius
-                    if(corner != default || CornerRadiusOverlayDefault != default)
+                    if (corner != default || CornerRadiusOverlayDefault != default)
                         skElement.CornerRadius = corner;
-                    
+
                     skElement.Padding = padding;
 
                     DrawSKVisualElement(skElement, args.Surface.Canvas, paint);

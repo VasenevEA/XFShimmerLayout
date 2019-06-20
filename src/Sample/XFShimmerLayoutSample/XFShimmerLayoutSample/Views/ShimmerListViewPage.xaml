@@ -36,6 +36,7 @@
                                     <BoxView
                                         Grid.Row="0"
                                         Grid.RowSpan="2"
+                                        controls:ShimmerLayout.Disable="True"
                                         Grid.Column="0"
                                         BackgroundColor="Brown"
                                         CornerRadius="20"

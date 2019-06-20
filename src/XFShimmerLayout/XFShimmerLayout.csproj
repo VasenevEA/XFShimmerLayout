@@ -6,22 +6,26 @@
 
   <PropertyGroup>
     <id>XFShimmerLayout</id>
-    <version>1.0.0</version>
+    <version>1.0.3</version>
     <title>XFShimmerLayout</title>
     <authors>ChasakisD</authors>
     <owners>ChasakisD</owners>
-    <PackageProjectUrl>https://github.com/ChasakisD/XFShimmerLayout</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/vasenevea/XFShimmerLayout</PackageProjectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <PackageReleaseNotes>[1.0.0]
 First release
 </PackageReleaseNotes>
-    <description>Efficient way to add a shimmering effect to your Xamarin.Forms applications.</description>
-    <RepositoryUrl>https://github.com/ChasakisD/XFShimmerLayout</RepositoryUrl>
+    <description>Fork from https://github.com/ChasakisD/XFShimmerLayout
+
+Added disable property</description>
+    <RepositoryUrl>https://github.com/vasenevea/XFShimmerLayout</RepositoryUrl>
     <PackageTags>xamarinforms, xamarin, shimmer, shimmering, effect, animation, efficient</PackageTags>
     <copyright>Copyright 2018</copyright>
     <FileVersion>1.0.0.1</FileVersion>
     <AssemblyVersion>1.0.0.1</AssemblyVersion>
     <PackageLicenseUrl>https://github.com/ChasakisD/XFShimmerLayout/blob/master/LICENSE</PackageLicenseUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>XFShimmerLayout-advanced</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
